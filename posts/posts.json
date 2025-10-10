@@ -1,5 +1,13 @@
 [
   {
+    "title": "GASを用いたGoogleフォームとGoogleカレンダー連携による欠席連絡自動化システムの構築",
+    "date": "2025-06-10",
+    "tags": ["GAS", "Googleフォーム", "Googleカレンダー"],
+    "summary": "GoogleフォームとGoogleカレンダーを連携させた欠席連絡自動化システムを構築しました。",
+    "slug": "gas-google-forms-calendar",
+    "contentPath": "posts/gas-google-forms-calendar.md"
+  },
+  {
     "title": "deepseekをローカルで動かしてみる(gpt4all)",
     "date": "2024-05-28",
     "tags": ["AI"],

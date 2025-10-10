@@ -1,5 +1,9 @@
 # ブログ
 
+## 公開
+GitHub Pagesを使って，
+https://e235221.github.io/Blog/
+で公開しています。
 
 ## ディレクトリ構成
 
@@ -13,7 +17,7 @@
 - `assets/` — 背景テクスチャなどの静的アセットを配置しています。
 - `.nojekyll` — GitHub Pages で Jekyll の自動ビルドを無効にするためのフラグ。
 
-## local
+## run in local
 ```bash
 cd MY_ORIGINAL_SITE
 python3 -m http.server 4000
@@ -26,8 +30,8 @@ python3 -m http.server 4000
 
 1. GitHub に新しいリポジトリを作成し、このディレクトリの内容をコミット・プッシュします。
 2. GitHub リポジトリの **Settings → Pages** を開き、**Branch** を公開したいブランチに設定、フォルダーは `/ (root)` を選択します。
-3. 保存後、数分ほどで `https://<ユーザー名>.github.io/<リポジトリ名>/` でサイトが公開されます。
-4. 既定で Jekyll が無効化されるよう `.nojekyll` を同梱しています。追加のビルド設定は不要です。
+3. 保存後、数分ほどでhttps://e235221.github.io/Blog/ でサイトが公開されます。
+- 既定で Jekyll が無効化されるよう `.nojekyll` を同梱しています。追加のビルド設定は不要です。
 
 ## Markdown 記事の追加方法
 
@@ -44,11 +48,3 @@ python3 -m http.server 4000
    }
    ```
 3. トップページ（`index.html`）の「記事」セクションに自動的に反映され、リンクを開くと `article.html?post=スラッグ` で内容が表示されます。
-
-## 追加カスタマイズのヒント
-
-- プロフィール文やヒーローテキストは `index.html` の該当ブロックを書き換えて調整します。
-- 背景画像や配色は `styles/main.css` のカスタムプロパティ（`--accent` など）を変更すると全体のトーンを簡単に調整できます。
-- 既存の記事デザインを変えたい場合は `styles/article.css` を編集してください。
-
-質問や改善アイデアがあれば Issue や Pull Request でお知らせください。
