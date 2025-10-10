@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Markdown で執筆した記事を閲覧できます。" />
+    <title>記事 | 山脇大貴の記録</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/article.css" />
+  </head>
+  <body class="article-page">
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">⟁</span>
+          <span class="brand-name">山脇大貴ノート</span>
+        </a>
+        <nav class="nav-links" aria-label="メインナビゲーション">
+          <a href="index.html#posts">記事</a>
+          <a href="index.html#about">プロフィール</a>
+          <a href="index.html#community">コミュニティ</a>
+        </nav>
+        <a class="cta-button" href="https://github.com/yamawakidaiki" target="_blank" rel="noopener">GitHub</a>
+        <button class="nav-toggle" aria-label="メニューを開閉">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="article-main">
+      <article class="article-container">
+        <header class="article-header">
+          <p class="article-meta">
+            <span id="article-date"></span>
+            <span id="article-tags"></span>
+          </p>
+          <h1 id="article-title"></h1>
+        </header>
+        <section id="article-content" class="article-content">
+          <p>読み込み中です...</p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-icon">⟁</span>
+            <span class="brand-name">山脇大貴ノート</span>
+          </a>
+          <p>生成AIとプロダクトづくりの学びを日々記録するブログです。</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>ナビゲーション</h4>
+            <a href="index.html#posts">記事一覧</a>
+            <a href="index.html#about">プロフィール</a>
+            <a href="index.html#community">コミュニティ</a>
+          </div>
+          <div>
+            <h4>リンク</h4>
+            <a href="https://github.com/yamawakidaiki" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:hello@yamawakidaiki.dev">メール</a>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>© 2024 山脇大貴</span>
+          <span>GitHub Pages にて公開中</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/article.js"></script>
+  </body>
+</html>

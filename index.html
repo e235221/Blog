@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Socio-Tech Okinawaは、沖縄を拠点に，公共政策・AI・データサイエンスについて考えていきます。"
+    />
+    <title>Socio-Tech Okinawa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#">
+          <span class="brand-icon">⟁</span>
+          <span class="brand-name">note</span>
+        </a>
+        <nav class="nav-links" aria-label="メインナビゲーション">
+          <a href="#posts">記事</a>
+          <a href="#about">プロフィール</a>
+          <a href="#community">コミュニティ</a>
+        </nav>
+        <a class="cta-button" href="https://github.com/yamawakidaiki" target="_blank" rel="noopener">GitHub</a>
+        <button class="nav-toggle" aria-label="メニューを開閉">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">個人ブログ</div>
+            <h1>Socio-Tech Okinawa</h1>
+            <p>
+              沖縄を拠点に，公共政策・AI・データサイエンスについて考えていきます。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#posts">最新の記事を読む</a>
+              <a class="secondary-action" href="#about">プロフィールを読む</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="orbital">
+              <div class="pulse"></div>
+              <div class="rings"></div>
+              <div class="rings delayed"></div>
+              <div class="particle-cloud">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+            </div>
+            <div class="panel">
+              <header>
+                <span>Writing Monitor</span>
+                <span class="status">Active</span>
+              </header>
+              <div class="panel-body">
+                <div class="data-stream">
+                  <span>今週の更新</span>
+                  <strong>3 記事</strong>
+                </div>
+                <div class="data-stream">
+                  <span>注目キーワード</span>
+                  <strong>生成AIワークフロー</strong>
+                </div>
+                <div class="data-stream">
+                  <span>下書き</span>
+                  <strong>5 本</strong>
+                </div>
+              </div>
+              <footer>
+                <span>書きかけのメモを毎晩整理</span>
+                <span>Last sync 23:40</span>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="posts" class="section section-light">
+        <div class="container section-header align-start">
+          <div>
+            <div class="eyebrow">最新記事</div>
+            <h2>最近書いた記事から 3 本ピックアップ。</h2>
+          </div>
+          <div class="section-summary">
+            <p>
+              最近書いた記事をピックアップしています。記事一覧から過去の記事もご覧いただけます。
+            </p>
+          </div>
+        </div>
+        <div class="container card-grid" id="post-list">
+          <p>記事を読み込み中です...</p>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header align-center">
+            <div>
+              <div class="eyebrow">About</div>
+              <h2>書き手について</h2>
+            </div>
+            <div class="section-summary">
+              <p>
+                沖縄に住んでいる大学生です。AIやコンピュータサイエンスを学びつつ，沖縄の地域課題について研究しています。
+              </p>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+
+              文章は自分のための備忘録が出発点ですが、同じテーマに取り組む方のヒントになればうれしいです。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="community" class="section section-light">
+        <div class="container community">
+          <div>
+            <div class="eyebrow">Community</div>
+            <h2>GitHub Pages で記事を公開しています。</h2>
+            <p>
+              ブログのソースコードは GitHub に公開中。修正提案や Issue でのフィードバックも歓迎です。スターを頂けると励みになります。
+            </p>
+          </div>
+          <a class="community-link" href="https://github.com/yamawakidaiki" target="_blank" rel="noopener">
+            <span>最新の記事ソースとツール</span>
+            <strong>github.com/yamawakidaiki</strong>
+            <span class="icon">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#">
+            <span class="brand-icon">⟁</span>
+            <span class="brand-name">山脇大貴ノート</span>
+          </a>
+          <p>生成AIとプロダクトづくりの学びを日々記録するブログです。</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>ナビゲーション</h4>
+            <a href="#posts">記事一覧</a>
+            <a href="#about">プロフィール</a>
+            <a href="#community">コミュニティ</a>
+          </div>
+          <div>
+            <h4>リンク</h4>
+            <a href="https://github.com/yamawakidaiki" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:hello@yamawakidaiki.dev">メール</a>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>© 2024 山脇大貴</span>
+          <span>GitHub Pages にて公開中</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

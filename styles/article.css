@@ -1,0 +1,113 @@
+.article-page .hero,
+.article-page .module-layout,
+.article-page .card-grid {
+  display: none;
+}
+
+.article-main {
+  padding: 140px 0 120px;
+  min-height: 60vh;
+}
+
+.article-container {
+  width: min(840px, 90%);
+  margin: 0 auto;
+  background: rgba(9, 13, 28, 0.85);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 48px clamp(24px, 6vw, 64px);
+  box-shadow: 0 40px 100px -60px rgba(0, 0, 0, 0.8);
+}
+
+.article-header {
+  margin-bottom: 48px;
+  display: grid;
+  gap: 12px;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.article-meta span::before {
+  content: "∘";
+  margin-right: 12px;
+  color: rgba(107, 107, 255, 0.5);
+}
+
+.article-meta span:first-child::before {
+  content: none;
+}
+
+.article-content {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(245, 246, 253, 0.9);
+  display: grid;
+  gap: 1.6rem;
+}
+
+.article-content h2,
+.article-content h3 {
+  margin-top: 2.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--fg);
+  font-family: "Space Grotesk", "Inter", "Noto Sans JP", sans-serif;
+}
+
+.article-content code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.article-content pre {
+  background: rgba(9, 14, 30, 0.95);
+  border-radius: 16px;
+  padding: 20px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+}
+
+.article-content blockquote {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 2px solid rgba(107, 107, 255, 0.4);
+  color: rgba(245, 246, 253, 0.7);
+  font-style: italic;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 3rem 0;
+}
+
+@media (max-width: 720px) {
+  .article-main {
+    padding: 120px 0 100px;
+  }
+
+  .article-container {
+    padding: 40px 24px;
+  }
+
+  .article-content {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "deepseekをローカルで動かしてみる(gpt4all)",
+    "date": "2024-05-28",
+    "tags": ["AI"],
+    "summary": "話題のdeepseekをローカルに入れてみました。",
+    "slug": "deepseek",
+    "contentPath": "posts/deepseek.md"
+  },
+  {
+    "title": "自己紹介",
+    "date": "2024-05-21",
+    "tags": ["自分について"],
+    "summary": "沖縄に住んでいる大学生です。AIやコンピュータサイエンスを学びつつ，沖縄の地域課題について研究しています。",
+    "slug": "1st_blog",
+    "contentPath": "posts/1st_blog.md"
+  }
+]
