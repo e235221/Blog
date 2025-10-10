@@ -16,18 +16,7 @@
 
 ### システム概要
 本システムは，Googleの各種サービスとDiscordを連携させて動作する。\UTF{00A0}部員がGoogleフォームに情報を入力すると，そのデータがGoogleスプレッドシートに記録され，それをトリガーとしてGoogle Apps Scriptが実行される。\UTF{00A0}スクリプトは，Googleカレンダーに予定を作成し，同時にDiscordへ通知を送信を行う。
-```mermaid
-graph TD
-    A[部員がGoogleフォームで欠席連絡を送信] --> B{フォーム回答データ}
-    B --> C[Googleスプレッドシートに回答が記録される]
-    C --> D{フォーム送信をトリガー}
-    D -- GAS実行 --> E[Google Apps Script]
-    E -- 予定作成 --> F[Googleカレンダー]
-    E -- 通知送信 --> G[Discord]
-    H[役員] -- 予定閲覧 --> F
-    H -- 通知閲覧 --> G
-    H -- 詳細閲覧 --> C
-```
+![システム概要](assets/images/gas_system_arc.png)
 
 
 
@@ -42,46 +31,13 @@ graph TD
 システムで出来ることを示す。
 - **部員**: 欠席連絡を行う。\UTF{00A0}%
 - **役員**: 欠席情報を閲覧・確認する。
-```mermaid
-graph TD
-    subgraph 利用者
-        A(部員)
-        B(役員)
-    end
+![ユースケース図](assets/images/gas_UseCase.png)
 
-    subgraph "ユースケース"
-        UC1("欠席連絡を申請する")
-        UC2("欠席状況をカレンダーで閲覧する")
-        UC3("欠席連絡の詳細をスプレッドシートで閲覧する")
-        UC4("欠席連絡をDiscordで受信する")
-    end
-
-    A --o UC1
-    B --o UC2
-    B --o UC3
-    B --o UC4
-```
 
 #### 処理シーケンス
 部員が欠席連絡を行ってから，各システムがどのように連携して処理を行うかを時系列で示す。
-```mermaid
-sequenceDiagram
-    participant 部員
-    participant Googleフォーム
-    participant Googleスプレッドシート
-    participant Google Apps Script
-    participant Googleカレンダー
-    participant Discord
+![処理シーケンス](assets/images/gas_sequence.png)
 
-    部員->>Googleフォーム: 氏名, 欠席日などを入力し送信
-    Googleフォーム->>Googleスプレッドシート: 回答データを自動記録
-    Note over Googleスプレッドシート, Google Apps Script: フォーム送信トリガーが発火
-    Googleスプレッドシート->>Google Apps Script: onFormSubmit(e) 関数を実行
-    Google Apps Script->>Googleカレンダー: createAllDayEvent() で終日予定を作成 
-    Googleカレンダー-->>Google Apps Script: 処理完了
-    Google Apps Script->>Discord: Webhookを利用して通知メッセージを送信 
-    Discord-->>Google Apps Script: 処理完了
-```
 #### 機能要件
 1. Googleフォームを用いて，以下の項目を含む欠席連絡を受け付ける。
 	- 氏名: 短文形式
@@ -282,12 +238,12 @@ Logger.log('Discord通知の送信に失敗しました: ' + e.message);
 - 設定からエディタに戻る。
 - エディタ右上の青色で「デプロイ」と書かれたボタンがある。
 - クリックするとこの画像になる。
-[[bcedd102c8bf959e3ea9c5d204c65db9_MD5.jpeg|Open: スクリーンショット 2025-06-13 1.48.00.png]]
-![[bcedd102c8bf959e3ea9c5d204c65db9_MD5.jpeg]]
+![ deployボタン押下](assets/images/deploy1.jpg)
+
 
 - 「デプロイ」 > デプロイを管理 > デプロイメントの作成 をクリックし，新規デプロイメントを作成する。
-[[86bdd0663bbdc20f70912df3e1e8481c_MD5.jpeg|Open: スクリーンショット 2025-06-13 1.47.54 1.png]]
-![[86bdd0663bbdc20f70912df3e1e8481c_MD5.jpeg]]
+![ deployの作成](assets/images/deploy2.jpg)
+
 - デプロイのウインドウの歯車マークをクリックすると、「ウェブアプリ」「実行可能API」「アドオン」「ライブラリ」とあるのでウェブアプリを選択
 	- これで、フォームの回答をトリガーとして実行されるWebアプリケーションとしてスクリプトがデプロイされる。
 - 以下のように設定する。

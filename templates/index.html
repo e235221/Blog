@@ -18,25 +18,7 @@
   </head>
   <body>
     <div class="noise-overlay" aria-hidden="true"></div>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="index.html">
-          <span class="brand-icon">⟁</span>
-          <span class="brand-name">Socio-Tech Okinawa</span>
-        </a>
-        <nav class="nav-links" aria-label="メインナビゲーション">
-          <a href="index.html#posts">記事</a>
-          <a href="index.html#about">プロフィール</a>
-          <a href="index.html#community">コミュニティ</a>
-        </nav>
-        <a class="cta-button" href="https://github.com/e235221" target="_blank" rel="noopener">GitHub</a>
-        <button class="nav-toggle" aria-label="メニューを開閉">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
+    {{> header}}
 
     <main>
       <section class="hero">
@@ -125,8 +107,8 @@
           </div>
           <div class="about-text">
             <p>
-              興味分野は，AI/データサイエンス・量子機械学習・地域公共政策×テクノロジーです。主に沖縄関連の課題について記事を書いていくつもりです。文章は自分のための備忘録が出発点ですが、同じテーマに取り組む方のヒントになればうれしいです。
-			  たまにガジェットや最近使い始めたObsidianについても書きます。
+
+              文章は自分のための備忘録が出発点ですが、同じテーマに取り組む方のヒントになればうれしいです。
             </p>
           </div>
         </div>
@@ -151,34 +133,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <a class="brand" href="index.html">
-            <span class="brand-icon">⟁</span>
-            <span class="brand-name">Socio-Tech Okinawa</span>
-          </a>
-          <p>生成AIとプロダクトづくりの学びを日々記録するブログです。</p>
-        </div>
-        <div class="footer-links">
-          <div>
-            <h4>ナビゲーション</h4>
-            <a href="index.html#posts">記事一覧</a>
-            <a href="index.html#about">プロフィール</a>
-            <a href="index.html#community">コミュニティ</a>
-          </div>
-          <div>
-            <h4>リンク</h4>
-            <a href="https://github.com/e235221" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-        <div class="footer-meta">
-          <span>© 2024 トマトッツオ</span>
-          <a href="https://x.com/YOKZ5eGtJHbgHjm" target="_blank" rel="noopener">X(twitter)</a>
-        </div>
-      </div>
-    </footer>
-
+    {{> footer}}
 
     <script src="scripts/main.js"></script>
   </body>

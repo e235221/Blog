@@ -49,8 +49,23 @@
   line-height: 1.8;
   font-size: 1.05rem;
   color: rgba(245, 246, 253, 0.9);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.6rem;
+  align-items: center;
+  width: 100%;
+}
+
+.article-content > * {
+  width: min(100%, 42rem);
+  margin: 0;
+}
+
+.article-content > img,
+.article-content > figure,
+.article-content > table {
+  width: 100%;
+  align-self: stretch;
 }
 
 .article-content h2,
@@ -66,6 +81,7 @@
   padding: 2px 6px;
   border-radius: 6px;
   font-size: 0.9rem;
+  font-family: "SFMono-Regular", "Consolas", "Menlo", monospace;
 }
 
 .article-content pre {
@@ -75,6 +91,18 @@
   overflow-x: auto;
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.95rem;
+  font-family: "SFMono-Regular", "Consolas", "Menlo", monospace;
+  box-sizing: border-box;
+  width: min(100%, 42rem);
+  margin-inline: auto;
+}
+
+.article-content pre code {
+  display: block;
+  background: none;
+  padding: 0;
+  color: rgba(245, 246, 253, 0.95);
+  line-height: 1.6;
 }
 
 .article-content blockquote {
@@ -88,7 +116,8 @@
 .article-content ul,
 .article-content ol {
   padding-left: 1.5rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.6rem;
 }
 
@@ -110,4 +139,68 @@
   .article-content {
     font-size: 1rem;
   }
+}
+
+/* ---------- Article polish & bugfixes (2025-10-10) ---------- */
+/* Better wrapping for Japanese text while allowing long URLs to break */
+.article-content {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* Improve list readability & marker visibility */
+.article-content ul,
+.article-content ol {
+  list-style-position: outside;
+}
+.article-content li::marker {
+  color: rgba(107, 107, 255, 0.9);
+}
+
+/* Responsive images and captions */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.article-content figure { margin: 0; }
+.article-content figcaption {
+  font-size: 0.9rem;
+  color: rgba(245, 246, 253, 0.65);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Headings: anchor-safe spacing on scroll and consistent rhythm */
+.article-content h2,
+.article-content h3 {
+  scroll-margin-top: 96px;
+}
+
+/* Tables (if any) */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.article-content th,
+.article-content td {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 12px;
+}
+.article-content thead th {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Inline links clarity on dark background */
+.article-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Code blocks: slightly tighter line-height for long snippets */
+.article-content pre code {
+  line-height: 1.5;
 }
