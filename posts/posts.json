@@ -3,7 +3,7 @@
     "title": "Obsidianで講義資料とメモを同時に取る",
     "date": "2025-10-10",
     "tags": ["Mac×Obsidian"],
-    "summary": "SlideNote プラグインでObsidianで講義資料とメモを同時に取る",
+    "summary": "SlideNote プラグインでObsidianで講義資料とメモを同時に取る。",
     "slug": "Obsidian",
     "contentPath": "posts/obsidian_LectureNote.md"
   },
@@ -14,6 +14,14 @@
     "summary": "MacのSystem Dataだけでストレージの4/5占めている。",
     "slug": "mac-systemdata",
     "contentPath": "posts/mac-systemdata.md"
+  },
+    {
+    "title": "エンジニアは外に出よう！",
+    "date": "2025-06-21",
+    "tags": ["Outdoor"],
+    "summary": "アウトドア好きのエンジニアがアウトドアとエンジニアリングの関係・魅力を語る。",
+    "slug": "outdoor",
+    "contentPath": "posts/outdoor.md"
   },
   {
     "title": "GASを用いたGoogleフォームとGoogleカレンダー連携による欠席連絡自動化システムの構築",
