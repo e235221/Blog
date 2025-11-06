@@ -1,5 +1,13 @@
 [
   {
+    "title": "youtube shortsを見れなくする(AdGuard)",
+    "date": "2025-11-10",
+    "tags": ["Mac"],
+    "summary": "AdGuardを用いてyoutube shortsを閲覧できなくしました。s",
+    "slug": "youtube_shorts",
+    "contentPath": "posts/youtube_shorts.md"
+  },
+  {
     "title": "Obsidianで講義資料とメモを同時に取る",
     "date": "2025-10-10",
     "tags": ["Mac×Obsidian"],
