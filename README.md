@@ -20,7 +20,7 @@ https://e235221.github.io/Blog/
 - `assets/` — 背景テクスチャなどの静的アセットを配置しています。
 - `.nojekyll` — GitHub Pages で Jekyll の自動ビルドを無効にするためのフラグ。
 
-## Bild
+## Build
 
 
 テンプレートやパーシャルを編集したら、以下で HTML を再生成します。
