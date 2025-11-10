@@ -8,7 +8,7 @@ Obsidianプラグインの一種であり，PDFやスライド資料（PDF形式
 
 このなかに，パラメータ情報を記入する。以下にその例を示す。
 ```slide-note
-file: [[sample.pdf]]
+file: sample.pdf
 page: 4
 scale: 1.0
 dpi: 3
@@ -60,4 +60,4 @@ dpiで解像度を指定する。`dpi=1`だと低解像度だが読み込みが�
 
 ## 表示例
 プラグインを導入したら，以下のようにページ指定してpdfを表示することができる。
-![プラグイン導入後の様子](assets/images/obsidian_LectureNote_example.png)
+![プラグイン導入後の様子](assets/blog/obsidian_LectureNote_example.png)

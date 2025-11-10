@@ -1,57 +1,73 @@
 [
   {
-    "title": "youtube shortsを見れなくする(AdGuard)",
+    "title": "YouTube Shorts を見れなくする（AdGuard検証）",
     "date": "2025-11-10",
-    "tags": ["Mac"],
-    "summary": "AdGuardを用いてyoutube shortsを閲覧できなくしました。",
-    "slug": "youtube_shorts",
-    "contentPath": "posts/youtube_shorts.md"
+    "tags": [
+      "Mac"
+    ],
+    "summary": "Zero Trust と AdGuard を活用して YouTube Shorts を遮断するまでの検証記録。",
+    "slug": "youtube-shorts",
+    "contentPath": "posts/youtube-shorts.md"
   },
   {
     "title": "Obsidianで講義資料とメモを同時に取る",
     "date": "2025-10-10",
-    "tags": ["Mac×Obsidian"],
-    "summary": "SlideNote プラグインでObsidianで講義資料とメモを同時に取る。",
-    "slug": "Obsidian",
-    "contentPath": "posts/obsidian_LectureNote.md"
+    "tags": [
+      "Mac×Obsidian"
+    ],
+    "summary": "SlideNote プラグインを使って講義資料とノートを同時に扱うためのセットアップ手順。",
+    "slug": "obsidian-lecture-note",
+    "contentPath": "posts/obsidian-lecture-note.md"
   },
   {
-    "title": "Macのsystemdataが膨大になった",
+    "title": "MacのSystem Dataが膨大になったときの対処メモ",
     "date": "2025-07-25",
-    "tags": ["Mac"],
-    "summary": "MacのSystem Dataだけでストレージの4/5占めている。",
+    "tags": [
+      "Mac"
+    ],
+    "summary": "MacのストレージでSystem Dataが異常増加した際、原因調査と解放した手順のメモ。",
     "slug": "mac-systemdata",
     "contentPath": "posts/mac-systemdata.md"
   },
-    {
+  {
     "title": "エンジニアは外に出よう！",
     "date": "2025-06-21",
-    "tags": ["Outdoor"],
-    "summary": "アウトドア好きのエンジニアがアウトドアとエンジニアリングの関係・魅力を語る。",
+    "tags": [
+      "Outdoor"
+    ],
+    "summary": "アウトドア活動から得た気づきを通して、エンジニアにこそ自然と向き合う時間が必要だと感じた理由。",
     "slug": "outdoor",
     "contentPath": "posts/outdoor.md"
   },
   {
     "title": "GASを用いたGoogleフォームとGoogleカレンダー連携による欠席連絡自動化システムの構築",
     "date": "2025-06-10",
-    "tags": ["GAS", "Googleフォーム", "Googleカレンダー"],
-    "summary": "GoogleフォームとGoogleカレンダーを連携させた欠席連絡自動化システムを構築しました。",
+    "tags": [
+      "GAS",
+      "Googleフォーム",
+      "Googleカレンダー"
+    ],
+    "summary": "Googleフォームの回答をトリガーに欠席予定をカレンダー登録し、Discord通知まで自動化した手順の記録。",
     "slug": "gas-google-forms-calendar",
     "contentPath": "posts/gas-google-forms-calendar.md"
   },
   {
     "title": "deepseekをローカルで動かしてみる(gpt4all)",
     "date": "2024-05-28",
-    "tags": ["AI"],
-    "summary": "話題のdeepseekをローカルに入れてみました。",
+    "tags": [
+      "AI"
+    ],
+    "summary": "話題の deepseek をローカル環境で動かすまでの手順と所感をまとめました。",
     "slug": "deepseek",
     "contentPath": "posts/deepseek.md"
   },
   {
     "title": "自己紹介",
     "date": "2024-05-21",
-    "tags": ["自分について"],
-    "summary": "沖縄に住んでいる大学生です。AIやコンピュータサイエンスを学びつつ，沖縄の地域課題について研究しています。",
+    "tags": [
+      "自分について"
+    ],
+    "summary": "沖縄に住んでいる大学生です。AIやコンピュータサイエンスを学びながら地域課題に向き合っています。",
     "slug": "1st_blog",
     "contentPath": "posts/1st_blog.md"
   }

@@ -126,7 +126,7 @@ AdGuardの構文`##selector`は，CSSセレクタ（HTML要素識別子）に該
 
 `youtube.com/shorts/*$document`
 
-- このルールは，`/shorts/` 以下のURLを「ドキュメント単位で」遮断する命令である。CSSによる非表示処理ではなく，HTTP応答レベルでアクセス自体を止めるため，YouTubeのSPA挙動にも対応できる。なお，`$document`はHTML文書を意味し，[[SPA（Single Page Application）]]に対してはこの指定が有効である。
+- このルールは，`/shorts/` 以下のURLを「ドキュメント単位で」遮断する命令である。CSSによる非表示処理ではなく，HTTP応答レベルでアクセス自体を止めるため，YouTubeのSPA挙動にも対応できる。なお，`$document`はHTML文書を意味し，SPA（Single Page Application）に対してはこの指定が有効である。
 
 ### 5. 動作検証都考察
 1.	/shorts タブに直接アクセスした場合，当初は一瞬再生が始まるが，リロード後にAdGuardルールが適用され白画面となる。

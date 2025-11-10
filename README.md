@@ -1,81 +1,114 @@
-# ブログ
+# 山脇大貴の記録
 
-## 公開
-GitHub Pagesを使って，
-https://e235221.github.io/Blog/
-で公開しています。
+生成AIやプロダクトづくりの学びをまとめた日本語ブログです。  
+公開URL: <https://e235221.github.io/Blog/>
+
+Obsidian の Vault をソースとして使い、`python3 scripts/build_posts.py` を実行するだけで GitHub Pages へ公開できる静的サイトになっています。
+
+---
 
 ## ディレクトリ構成
 
-- `index.html` — ビルド済みのトップページ。`scripts/build.js` で生成されます。
-- `styles/main.css` — サイト全体のスタイル。カラー、レイアウト、レスポンシブ設定を含みます。
-- `styles/article.css` — 記事ページ固有のタイポグラフィや余白を定義します。
-- `scripts/main.js` — モバイルナビゲーション、タブ切り替え、記事一覧の読み込みを担当します。
-- `scripts/article.js` — Markdown 記事を HTML に変換して表示します。
-- `scripts/build.js` — テンプレートとパーシャルを展開して HTML を生成します。
-- `templates/` — `index.html` や `article.html` の元となるテンプレートを配置します。
-- `partials/` — ヘッダーやフッターなどの共通コンポーネントを管理します。
-- `posts/` — Markdown で書いた記事と `posts.json`（記事一覧のマニフェスト）を管理します。
-- `article.html` — ビルド済みの単一記事ページ。クエリパラメータ `?post=スラッグ` で表示する記事を切り替えます。
-- `assets/` — 背景テクスチャなどの静的アセットを配置しています。
-- `.nojekyll` — GitHub Pages で Jekyll の自動ビルドを無効にするためのフラグ。
+- `index.html` / `article.html` — 公開用の HTML ファイル。
+- `styles/` — レイアウト・タイポグラフィを定義するスタイルシート。
+- `scripts/main.js` — ナビゲーションや記事一覧の読み込み処理。
+- `scripts/article.js` — Markdown を HTML に変換して記事ページに表示。
+- `scripts/build_posts.py` — Vault から公開用 Markdown (`posts/`) とマニフェスト (`posts/posts.json`) を生成。
+- `vault/posts/` — Obsidian から同期する元記事（Markdown）。
+- `vault/assets/` — 記事で使用する画像・メディア。
+- `posts/` — 公開用に生成された Markdown と `posts.json`。
+- `assets/blog/` — 記事用の画像など（`build_posts.py` が `vault/assets` からコピー）。
+- `.nojekyll` — GitHub Pages で Jekyll の自動ビルドを無効化するフラグ。
 
-## Build
+---
 
+## ローカルでの確認方法
 
-テンプレートやパーシャルを編集したら、以下で HTML を再生成します。
-
-```bash
-node scripts/build.js
-```
-
-## Run in local
 ```bash
 cd MY_ORIGINAL_SITE
-node scripts/build.js
-python3 -m http.server 4000
+python3 scripts/build_posts.py   # Vault 内容から公開ファイルを生成
+python3 -m http.server 4000      # サーバーを起動
 ```
 
-- ブラウザで `http://localhost:4000` にアクセスすると内容を確認できます。別のポートを使いたい場合は `4000` を適宜変更してください。
-- index.htmlを直で開いても記事を表示できません。
+ブラウザで <http://localhost:4000> を開くとサイトを確認できます。  
+`file://` では `fetch` が失敗するため、必ずローカルサーバー経由で閲覧してください。
 
-## GitHub Pages 公開手順
+---
 
-1. GitHub に新しいリポジトリを作成し、このディレクトリの内容をコミット・プッシュします。
-2. GitHub リポジトリの **Settings → Pages** を開き、**Branch** を公開したいブランチに設定、フォルダーは `/ (root)` を選択します。
-3. 保存後、数分ほどでhttps://e235221.github.io/Blog/ でサイトが公開されます。
-- 既定で Jekyll が無効化されるよう `.nojekyll` を同梱しています。追加のビルド設定は不要です。
+## Obsidian Vault との同期フロー
 
-## Markdown 記事の追加方法
-
-1. `posts/` ディレクトリに `slug.md` 形式で記事を追加します。見出しや本文は通常の Markdown で記述します。
-2. `posts/posts.json` に以下のようなエントリを追加します。
-   ```json
-   {
-     "title": "記事タイトル",
-     "date": "2024-06-01",
-     "tags": ["カテゴリ"],
-     "summary": "トップページに表示する概要。",
-     "slug": "記事のスラッグ",
-     "contentPath": "posts/記事のスラッグ.md"
-   }
+1. **Vault をコピー（または rsync）**
+   ```bash
+   rsync -av --delete ~/Obsidian/Blog/ vault/
    ```
-3. トップページ（`index.html`）の「記事」セクションに自動的に反映され、リンクを開くと `article.html?post=スラッグ` で内容が表示されます。
+   - `vault/posts` に Markdown、`vault/assets` に画像を配置します。
+   - 直接このリポジトリを Obsidian Vault として開いてもOKです。
 
-## Markdown の書き方メモ
+2. **公開用ファイルを生成**
+   ```bash
+   python3 scripts/build_posts.py
+   ```
+   これにより以下が自動で更新されます。
+   - `posts/*.md`（フロントマターを除去した公開用 Markdown）
+   - `posts/posts.json`（トップページで使う記事リスト）
+   - `assets/blog/`（Vault の画像をコピー）
 
-- コードはバッククォート 3 つで囲むとブロックとして表示されます。必要なら言語名を指定してください。
+3. **コミット & プッシュ**
+   ```bash
+   git status
+   git add .
+   git commit -m "Update blog posts"
+   git push
+   ```
+
+---
+
+## 記事ファイルの書き方
+
+- `vault/posts/` に Markdown を保存し、冒頭に YAML フロントマターを付けます。
 
   ```markdown
-  ```js
-  console.log("Hello Socio-Tech!");
-  ```
+  ---
+  title: "GASを用いた欠席連絡自動化"
+  date: "2025-06-10"
+  tags: ["GAS", "Googleフォーム"]
+  summary: "Googleフォームの回答をトリガーに欠席予定をカレンダー登録し、Discord通知まで自動化した手順の記録。"
+  slug: "gas-google-forms-calendar"
+  ---
+
+  本文はここから始めます。Obsidian の `![[images/sample.png]]` 記法も利用できます。
   ```
 
-- 画像はリポジトリ内に配置し、相対パスで参照します。`assets/images/` に画像を置いた場合は次のように記述できます。
+- `slug` を省略した場合はファイル名から自動生成されます。
+- `summary` が無いと本文の冒頭段落から抜粋されます。
 
-  ```markdown
-  ![研究メモ](assets/images/research-note.png)
-  ```
+### 画像の扱い
 
-  この記事ファイルからの相対パスになるため、`posts/` 配下から参照する場合も `assets/...` のように始めれば GitHub Pages でも動作します。
+- `vault/assets/` に画像を配置します（例: `vault/assets/images/diagram.png`）。
+- Markdown 内では以下のいずれかで参照できます。
+  - Obsidian 記法 `![[images/diagram.png]]`
+  - あるいは標準 Markdown `![説明](assets/blog/images/diagram.png)`  
+    ※ビルド時に `assets/blog/` へコピーされます。
+
+---
+
+## GitHub Pages で公開する手順
+
+1. このディレクトリをコミットして GitHub にプッシュ。
+2. リポジトリの **Settings → Pages** を開き、`Branch: main`、`Folder: /(root)` を選択して保存。
+3. 数分後に `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます。
+4. 公開後に 404 になる場合は、`index.html` がリポジトリ直下に存在するか、デプロイ (Deployments) のステータスを確認してください。
+
+---
+
+## よくある質問
+
+### Q. `記事の読み込み中にエラーが発生しました` と表示される
+`file://` で開いていると `fetch` が失敗します。`python3 -m http.server 4000` などでサーバーを起動し、`http://localhost:4000` からアクセスしてください。
+
+### Q. Vault とリポジトリを完全に同期したい
+`rsync`, `git subtree`, GitHub Actions など好みの方法で `vault/` を同期してください。ビルド済みの `posts/` と `assets/blog/` は GitHub Pages が必要とする公開ファイルなので、そのままコミットして問題ありません。
+
+---
+
+質問や改善アイデアがあれば Issue や Pull Request でお知らせください。
